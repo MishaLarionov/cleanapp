@@ -11,7 +11,7 @@
       };
       firebase.initializeApp(config);
       function login() {
-        var ref = new Firebase("https://cleanapp-a4422.firebaseio.com");
+        var ref = new firebase("https://cleanapp-a4422.firebaseio.com");
         ref.authWithOAuthPopup("google", function(error, authData) {
         if (error) {
           console.log("Login Failed!", error);
