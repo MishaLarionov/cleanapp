@@ -19,8 +19,13 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+a{ 
+    color:aqua;
+}
+
 .mdl-demo .mdl-layout__header-row {
-  padding-left: 40px;
+    background-color: green;
 }
 .mdl-demo .mdl-layout.is-small-screen .mdl-layout__header-row h3 {
   font-size: inherit;
@@ -40,7 +45,6 @@ html, body {
 }
 .mdl-demo .mdl-layout__tab-bar {
   padding: 0;
-  padding-left: 16px;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
@@ -112,6 +116,7 @@ html, body {
 }
 .mdl-demo section.section--center {
   max-width: 860px;
+    margin-bottom: 40px;
 }
 .mdl-demo #features section.section--center {
   max-width: 620px;
@@ -237,22 +242,9 @@ html, body {
   z-index: 99;
 }
 .fixed-nav-bar {
-    width: 120%;
-    position: relative;
+    width: 100%;
+    position: relative;  
     background-color: #00a087;
-}
-
-/* The element at the top of the page right after the fixed navigation bar
-   MUST have sufficient top margin or else it will be covered by the bar */
-.content {
-    position: relative;
-    padding: none;
-}
-
-/* Example responsive navigation menu  */
-.fixed-nav-bar li, .fixed-nav-bar a { 
-  height: 50px;
-  line-height: 50px;
 }
 .menu {
   width: 90%;
@@ -260,17 +252,12 @@ html, body {
   margin: 0 ;
 padding: none;
 }
-.menu a, .menu a:visited {
-  color: #ffffff;
-}
-.menu a:hover, .menu a:target {
-  color: #ebebeb;
-}
 .menu-items { 
     position: relative;
     padding: 0;
     margin: 0;
   display: inline-block;
+    color: white;
 }
 .menu-items li {
   display: inline-block;
@@ -279,4 +266,9 @@ padding: none;
 }
 .menu-items a {
   text-decoration: none;
+}
+
+#add{
+    position: absolute !important;
+    top: 90% !important;
 }
