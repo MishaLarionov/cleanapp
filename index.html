@@ -10,11 +10,6 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       firebase.initializeApp(config);
-    </script>
-  </head>
-  <body>
-    <button onclick="login()">Login</button>
-    <script>
       function login() {
         var ref = new Firebase("https://cleanapp-a4422.firebaseio.com");
         ref.authWithOAuthPopup("google", function(error, authData) {
@@ -27,5 +22,8 @@
         });
       }
     </script>
+  </head>
+  <body>
+    <button onclick="login()">Login</button>
   </body>
 </html>
