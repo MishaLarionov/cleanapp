@@ -11,6 +11,7 @@
       };
       firebase.initializeApp(config);
       function login() {
+        console.log("ayy lmao")
         firebase.authWithOAuthRedirect("google", function(error, authData) {
         if (error) {
           console.log("Login Failed!", error);
