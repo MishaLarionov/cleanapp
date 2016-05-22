@@ -11,18 +11,16 @@
       };
       firebase.initializeApp(config);
       function login() {
+        //Initialize the provider
         var provider = new firebase.auth.GoogleAuthProvider();
-        // [END createprovider]
-        // [START addscopes]
+        //Add the scope
         provider.addScope('https://www.googleapis.com/auth/plus.login');
-        // [END addscopes]
-        // [START signin]
-        firebase.auth().signInWithRedirect(provider).then(function(error) {
-          if (error) {
-            console.log("Signin failed.")
-          } else {
-            window.location("feed.html")
-          }
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+          var token = result.credential.accessToken;
+          var user = result.user;
+        }).catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
         });
       }
     </script>
