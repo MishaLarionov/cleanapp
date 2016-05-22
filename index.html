@@ -12,7 +12,8 @@
       firebase.initializeApp(config);
       function login() {
         var provider = new firebase.auth.GoogleAuthProvider();
-        if (firebase.getAuth()) {
+        ref = firebase.getAuth()
+        if ref {
           window.location("feed.html")
         } else {
           // [END createprovider]
