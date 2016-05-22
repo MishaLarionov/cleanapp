@@ -51,6 +51,8 @@
           updates['/posts/' + postID] = postData;
 
           return firebase.database().ref().update(updates);
+
+          window.location.replace("feed.html");
         });
       }
       function validate() {
@@ -63,7 +65,7 @@
   <body onload="validate()">
     <form action="">
       <input type="file" id="imageUpload" accept="image/*">
-      <input type="button" value="test" onClick="sendForm(this.form); window.location.replace('feed.html');">
+      <input type="button" value="test" onClick="sendForm(this.form)">
     </form>
   </body>
 </html>
