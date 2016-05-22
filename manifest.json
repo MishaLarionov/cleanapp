@@ -1,20 +1,15 @@
 {
-  "name": "CleanApp",
-  "description": "Connect with your environment by eliminating trash.",
+  "name": "TopThis",
+  "description": "Connect with your friends competitively",
   "icons": [
     {
-      "src": "launcher-icon-2x.png",
+      "src": "logo-tiny.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "launcher-icon-3x.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "launcher-icon-4x.png",
-      "sizes": "192x192",
+      "src": "logo-formatted.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
