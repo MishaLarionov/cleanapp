@@ -17,11 +17,7 @@
     <script type="text/javascript">
       var database = firebase.database.Reference;
       function makePosts() {
-        //This is what the documentation says, but obviously this isn't working
-        for  (i in firebase.database().ref('posts')) {
-          console.log(i)
-        }
-        console.log(firebase.database().ref('posts').toString());
+        
       }
       /*
       if (!firebase.auth().currentUser) {
