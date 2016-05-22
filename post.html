@@ -53,7 +53,7 @@
           return firebase.database().ref().update(updates);
 
           window.location.replace("feed.html");
-        }
+        });
       }
       function validate() {
         if (getCookie("userID") == "") {
