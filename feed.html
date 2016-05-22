@@ -12,8 +12,7 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       function checkAuth() {
-        var ref = new Firebase("https://cleanapp-a4422.firebaseio.com");
-        var authData = ref.getAuth();
+        firebase.getAuth();
         if (authData) {
           console.log("Authenticated user with uid:", authData.uid);
         } else {
