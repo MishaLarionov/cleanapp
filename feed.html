@@ -14,7 +14,7 @@
       };
       firebase.initializeApp(config);
       function authLogin() {
-        if firebase.auth() {
+        if (firebase.auth().currentUser) {
           console.log("User is authenticated.");
         } else {
           var provider = new firebase.auth.GoogleAuthProvider();
