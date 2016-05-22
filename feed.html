@@ -23,11 +23,10 @@
       //Add the scope
       provider.addScope('https://www.googleapis.com/auth/plus.login');
       console.log("Current user:");
-      console.log(firebase.auth().currentUser);
       try {
-        console.log(firebase.auth().currentUser);
+        console.log(firebase.auth().currentUser.uid);
       } catch(error) {
-        firebase.auth().signInWithPopup(provider).then(function(result) {
+        firebase.auth().signInWithRedirect(provider).then(function(result) {
           var token = result.credential.accessToken;
           var user = result.user;
           console.log("Login success");
