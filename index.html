@@ -17,7 +17,7 @@
         provider.addScope('https://www.googleapis.com/auth/plus.login');
         // [END addscopes]
         // [START signin]
-        firebase.auth().signInWithRedirect(provider).then(function(error) {
+        firebase.auth().signInWithPopup (provider).then(function(error) {
           if (error) {
             console.log("Signin failed.")
           } else {
