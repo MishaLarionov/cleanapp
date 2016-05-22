@@ -10,25 +10,20 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       firebase.initializeApp(config);
-      function login() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        var ref = new Firebase("cleanapp-a4422.firebaseio.com");
-        if (ref.getAuth()) {
+      firebase.auth().getRedirectResult().then(function(result) {
+        if (result.credential) {
           window.location("feed.html");
         } else {
-          // [END createprovider]
-          // [START addscopes]
-          provider.addScope('https://www.googleapis.com/auth/plus.login');
-          // [END addscopes]
-          // [START signin]
-          firebase.auth().signInWithRedirect (provider).then(function(success) {
-            if (success) {
-              console.log("Signin works!")
-            } else {
-              console.log("Signin failed.")
-            }
-          });
-        }
+          console.log("Signin failed.")
+      }
+      function login() {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        // [END createprovider]
+        // [START addscopes]
+        provider.addScope('https://www.googleapis.com/auth/plus.login');
+        // [END addscopes]
+        // [START signin]
+        firebase.auth().signInWithRedirect (provider);
       }
     </script>
   </head>
