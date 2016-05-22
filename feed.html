@@ -22,7 +22,6 @@
       var provider = new firebase.auth.GoogleAuthProvider();
       //Add the scope
       provider.addScope('https://www.googleapis.com/auth/plus.login');
-      console.log("Current user:");
       try {
         console.log(firebase.auth().currentUser.uid);
       } catch(error) {
