@@ -23,7 +23,10 @@
         provider.addScope('https://www.googleapis.com/auth/plus.login');
         // [END addscopes]
         // [START signin]
-        firebase.auth().signInWithRedirect (provider);
+        firebase.auth().signInWithRedirect (provider).then(function(result) {
+        if (result.credential) {
+          console.log("IT WORKS")
+        });
       }
     </script>
   </head>
