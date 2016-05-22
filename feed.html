@@ -16,9 +16,9 @@
       function auth() {
         //Put login code here
       }
-      var database = firebase.database();
+      var database = firebase.database.Reference;
       function makePosts() {
-        console.log(firebase.database().ref('posts/'));
+        console.log(database.Value("posts"));
       }
       function newPost() {
 
