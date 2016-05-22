@@ -12,7 +12,7 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       function checkAuth() {
-        if (firebase.User) {
+        if (firebase.User.uid) {
           console.log("The user is authenticated.");
           console.log(firebase.User);
           console.log(firebase.User.uid);
