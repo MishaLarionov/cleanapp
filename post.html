@@ -11,9 +11,11 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       function sendForm(form) {
+        var postID = getTime();
+        var userID = firebase.user().uid;
         var postData = {
-          pid: getTime(),
-          uid: firebase.user().uid,
+          pid: postID;,
+          uid: userID,
         };
 
         // Get a key for a new Post.
