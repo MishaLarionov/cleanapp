@@ -11,10 +11,17 @@
         databaseURL: "https://cleanapp-a4422.firebaseio.com",
         storageBucket: "cleanapp-a4422.appspot.com",
       };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+      function makePosts() {
+        console.log("Making posts");
+      }
       function checkAuth() {
+        console.log(firebase.User());
         if (firebase.User()) {
           console.log("The user is authenticated.");
           console.log(firebase.User().uid);
+          makePosts();
         } else {
           window.location = "index.html";
         }
