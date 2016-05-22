@@ -179,9 +179,9 @@ a{
   text-decoration: none;
 }
 .mdl-demo section .section__circle-container > .section__circle-container__circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
+    width: 10vh;
+    height: 10vh;
+  border-radius: 50%;
   margin: 8px 0;
 }
 .mdl-demo section.section--footer .section__circle--big {
@@ -190,7 +190,8 @@ a{
   border-radius: 50px;
   margin: 8px 32px;
 }
-.mdl-demo .is-small-screen section.section--footer .section__circle--big {
+
+    height: 50px;.mdl-demo .is-small-screen section.section--footer .section__circle--big {
   width: 50px;
   height: 50px;
   border-radius: 25px;
@@ -246,12 +247,6 @@ a{
     position: absolute;  
     background-color: #00a087;
 }
-.menu {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 ;
-padding: none;
-}
 .menu-items { 
     position: relative;
     padding: 0;
@@ -281,9 +276,4 @@ padding: none;
     background-color: green;
     padding: 10%;
     
-}
-.fixed {
-    position:fixed !important;
-    top:0 !important;
-    background-color: blues;
 }
