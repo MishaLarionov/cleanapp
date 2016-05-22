@@ -11,7 +11,9 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       function sendForm(form) {
-        print();
+        firebase.database().ref('posts/' + getTime().toString()).set({
+          userID: firebase.user().uid,
+        });
       }
     </script>
   </head>
