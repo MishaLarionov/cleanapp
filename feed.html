@@ -2,6 +2,7 @@
 
 <html lang="en">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -14,7 +15,10 @@
       firebase.initializeApp(config);
       var database = firebase.database();
       function makePosts() {
-        console.log("Making posts");
+        console.log(firebase.database().ref('posts/'));
+      }
+      function newPost() {
+
       }
       function checkAuth() {
         console.log(firebase.User());
@@ -30,6 +34,6 @@
   </head>
   <body onload="checkAuth();">
   </body>
-
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <button onclick="newPost();">New Post</button>
 </html>
