@@ -21,7 +21,7 @@
         for  (i in firebase.database().ref('posts')) {
           console.log(i)
         }
-        console.log(firebase.database().ref('posts').orderByKey());
+        console.log(firebase.database().ref('posts').toString());
       }
       /*
       if (!firebase.auth().currentUser) {
