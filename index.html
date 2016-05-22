@@ -20,6 +20,10 @@
         firebase.auth().signInWithRedirect(provider).then(function(result) {
           var token = result.credential.accessToken;
           var user = result.user;
+          doot = firebase.database().ref("/").once('value').then(function(snapshot) {
+              return snapshot.val();
+          });
+          console.log(doot);
           console.log("Login success");
         }).catch(function(error) {
           var errorCode = error.code;
