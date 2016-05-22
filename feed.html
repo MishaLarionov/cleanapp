@@ -18,10 +18,8 @@
       }
       var database = firebase.database.Reference;
       function makePosts() {
-        $.getJSON("https://cleanapp-a4422.firebaseio.com/rest/retrieving-data.json",
-        function(data) {
-          alert(data);
-        });
+        //This is what the documentation says, but obviously this isn't working
+        console.log(firebase.database().ref('posts'));
       }
       function newPost() {
 
@@ -32,5 +30,6 @@
   <body>
   </body>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <input type="text" value=""></input>
     <button onclick="newPost();">New Post</button>
 </html>
