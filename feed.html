@@ -16,6 +16,8 @@
         var authData = ref.getAuth();
         if (authData) {
           console.log("Authenticated user with uid:", authData.uid);
+        } else {
+          console.log("User is not logged in!")
         }
       }
     </script>
