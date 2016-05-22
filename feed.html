@@ -25,9 +25,9 @@
       //Add the scope
       provider.addScope('https://www.googleapis.com/auth/plus.login');
       console.log("Current user:");
-      try {
+      //try {
         console.log(firebase.auth().currentUser.uid);
-      } catch(error) {
+      /*} catch(error) {
         firebase.auth().signInWithRedirect(provider).then(function(result) {
           var token = result.credential.accessToken;
           var user = result.user;
@@ -36,7 +36,7 @@
           var errorCode = error.code;
           var errorMessage = error.message;
         });
-      }
+      }*/
 
       /*
       if (!firebase.auth().currentUser) {
