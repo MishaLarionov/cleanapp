@@ -13,6 +13,9 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       firebase.initializeApp(config);
+      function auth() {
+        //Put login code here
+      }
       var database = firebase.database();
       function makePosts() {
         console.log(firebase.database().ref('posts/'));
@@ -20,19 +23,9 @@
       function newPost() {
 
       }
-      function checkAuth() {
-        console.log(firebase.User());
-        if (firebase.User().uid) {
-          console.log("The user is authenticated.");
-          console.log(firebase.User().uid);
-          makePosts();
-        } else {
-          window.location = "index.html";
-        }
-      }
     </script>
   </head>
-  <body onload="checkAuth();">
+  <body>
   </body>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
     <button onclick="newPost();">New Post</button>
