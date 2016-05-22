@@ -12,7 +12,8 @@
       firebase.initializeApp(config);
       function login() {
         var provider = new firebase.auth.GoogleAuthProvider();
-        if (firebase.getAuth()) {
+        var ref = new Firebase("cleanapp-a4422.firebaseio.com");
+        if (ref.getAuth()) {
           window.location("feed.html");
         } else {
           // [END createprovider]
