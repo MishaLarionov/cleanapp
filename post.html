@@ -14,29 +14,26 @@
       firebase.initializeApp(config);
       function sendForm(form) {
         var $fileUpload = $("input[type='file']");
-        if (parseInt($fileUpload.get(0).files.length)>1){
-          alert("You can only upload a maximum of 1 image. Try again");
-        } else {
-          var d = new Date()
-          var postID = d.getTime();
-          var userID = firebase.auth().currentUser.uid;
-          var postData = {
-            "uid": userID,
-          }
+        alert("You can only upload a maximum of 1 image. Try again");
+        var d = new Date()
+        var postID = d.getTime();
+        var userID = firebase.auth().currentUser.uid;
+        var postData = {
+          "uid": userID,
+        }
 
-          var storageRef = firebase.storage().ref();
-          var file = $fileUpload.get(0).files
-          var uploadTask = var uploadTask = storageRef.child('postImages/' + postID).put(file);
+        var storageRef = firebase.storage().ref();
+        var file = $fileUpload.get(0)
+        var uploadTask = var uploadTask = storageRef.child('postImages/' + postID).put(file);
 
-          // Get a key for a new Post.
-          var newPostKey = firebase.database().ref().child('posts').push().key;
+        // Get a key for a new Post.
+        var newPostKey = firebase.database().ref().child('posts').push().key;
 
-          // Write the new post's data simultaneously in the posts list and the user's post list.
-          var updates = {};
-          updates['/posts/' + postID] = postData;
+        // Write the new post's data simultaneously in the posts list and the user's post list.
+        var updates = {};
+        updates['/posts/' + postID] = postData;
 
-          return firebase.database().ref().update(updates);
-        };
+        return firebase.database().ref().update(updates);
       }
     </script>
   </head>
