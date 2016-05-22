@@ -17,11 +17,11 @@
         provider.addScope('https://www.googleapis.com/auth/plus.login');
         // [END addscopes]
         // [START signin]
-        firebase.auth().signInWithPopup (provider).then(function(error) {
-          if (error) {
-            console.log("Signin failed.")
-          } else {
+        firebase.auth().signInWithPopup (provider).then(function(success) {
+          if (success) {
             window.location("feed.html")
+          } else {
+            console.log("Signin failed.")
           }
         });
       }
