@@ -12,18 +12,22 @@
       firebase.initializeApp(config);
       function login() {
         var provider = new firebase.auth.GoogleAuthProvider();
-        // [END createprovider]
-        // [START addscopes]
-        provider.addScope('https://www.googleapis.com/auth/plus.login');
-        // [END addscopes]
-        // [START signin]
-        firebase.auth().signInWithRedirect (provider).then(function(success) {
-          if (success) {
-            window.location("feed.html")
-          } else {
-            console.log("Signin failed.")
-          }
-        });
+        if firebase.getAuth() {
+          window.location("feed.html")
+        } else {
+          // [END createprovider]
+          // [START addscopes]
+          provider.addScope('https://www.googleapis.com/auth/plus.login');
+          // [END addscopes]
+          // [START signin]
+          firebase.auth().signInWithRedirect (provider).then(function(success) {
+            if (success) {
+              console.log("Signin works!")
+            } else {
+              console.log("Signin failed.")
+            }
+          });
+        }
       }
     </script>
   </head>
