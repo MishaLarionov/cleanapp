@@ -3,6 +3,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script>
+    if (firebase.auth().currentUser == null) {
+        window.location.replace("feed.html");
+      });
+    }
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyAqHNnB3aN5C2MZG2fTK6P9zamY3F5kwwU",
