@@ -37,6 +37,8 @@
         updates['/posts/' + postID] = postData;
 
         return firebase.database().ref().update(updates);
+
+        window.location.replace("feed.html");
       }
     </script>
   </head>
