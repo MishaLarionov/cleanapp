@@ -33,7 +33,7 @@
         firebase.auth().signInWithPopup(provider).then(function(result) {
           var d = new Date()
           var postID = d.getTime();
-          var userID = getCookie("uid");
+          var userID = getCookie("userID");
           var postData = {
             "uid": userID,
           }
