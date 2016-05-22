@@ -31,7 +31,8 @@
               "name": user.displayName,
             }
           }
-          document.cookie = "userID=" + user.uid + "; userName=" + user.displayName;
+          document.cookie = "userID=" + user.uid;
+          document.cookie = "userName=" + user.displayName;
           window.location.replace("feed.html", user, token);
         }).catch(function(error) {
           // Handle Errors here.
