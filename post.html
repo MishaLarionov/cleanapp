@@ -20,7 +20,10 @@
           "uid": userID,
         }
 
-        console.log(document.getElementById("imageUpload"));
+        var fileElement = document.getElementById("imageUpload");
+        if ('files' in fileElement) {
+          console.log(fileElement.files)
+        }
         var storageRef = firebase.storage().ref();
         //var uploadTask = storageRef.child('postImages/' + postID).put(file);
 
