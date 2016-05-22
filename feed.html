@@ -18,7 +18,7 @@
       }
       function checkAuth() {
         console.log(firebase.User());
-        if (firebase.User()) {
+        if (firebase.User().uid) {
           console.log("The user is authenticated.");
           console.log(firebase.User().uid);
           makePosts();
