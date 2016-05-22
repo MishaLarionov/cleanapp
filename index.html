@@ -17,6 +17,7 @@
           console.log("Signin failed.");
       }
       function login() {
+        console.log("Login request started.");
         var provider = new firebase.auth.GoogleAuthProvider();
         // [END createprovider]
         // [START addscopes]
@@ -26,6 +27,8 @@
         firebase.auth().signInWithRedirect (provider).then(function(result) {
         if (result.credential) {
           console.log("IT WORKS");
+        } else {
+          console.log("It doesn't work.");
         });
       }
     </script>
