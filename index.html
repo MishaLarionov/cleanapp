@@ -21,6 +21,7 @@
         var provider = new firebase.auth.GoogleAuthProvider();
         //Add the scope
         provider.addScope('https://www.googleapis.com/auth/plus.login');
+        /*
         firebase.auth().signInWithRedirect(provider).then(function(result) {
           var token = result.credential.accessToken;
           var user = result.user;
@@ -29,6 +30,7 @@
           var errorCode = error.code;
           var errorMessage = error.message;
         });
+        */
       }
     </script>
     <meta charset="utf-8">
