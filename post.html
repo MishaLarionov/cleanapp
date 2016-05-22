@@ -22,7 +22,7 @@
 
         var fileElement = document.getElementById("imageUpload");
         if ('files' in fileElement) {
-          console.log(fileElement.files)
+          console.log((fileElement.files)[0]);
         }
         var storageRef = firebase.storage().ref();
         //var uploadTask = storageRef.child('postImages/' + postID).put(file);
