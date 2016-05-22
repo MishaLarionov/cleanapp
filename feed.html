@@ -13,8 +13,23 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       firebase.initializeApp(config);
-      function auth() {
-        //Put login code here
+      function authLogin() {
+        if (firebase.auth().currentUser) {
+          console.log("User is authenticated.");
+        } else {
+          var provider = new firebase.auth.GoogleAuthProvider();
+          //Add the scope
+          provider.addScope('https://www.googleapis.com/auth/plus.login');
+
+          firebase.auth().signInWithRedirect(provider).then(function(result) {
+            var token = result.credential.accessToken;
+            var user = result.user;
+            console.log("Login success");
+          }).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+          });
+        }
       }
       var database = firebase.database.Reference;
       function makePosts() {
@@ -24,8 +39,6 @@
       makePosts();
     </script>
   </head>
-  <body>
+  <body onload="authLogin()">
   </body>
-    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-    <button href="post.html">New Post</button>
 </html>

@@ -10,14 +10,30 @@
         databaseURL: "https://cleanapp-a4422.firebaseio.com",
         storageBucket: "cleanapp-a4422.appspot.com",
       };
-      function sendForm() {
+      //Initialize the firebase app
+      firebase.initializeApp(config);
+      function sendForm(form) {
+        var d = new Date()
+        var postID = d.getTime();
+        var userID = firebase.auth().currentUser.uid;
+        var postData = {
+          "uid": userID,
+          "img": null,
+        };
 
+        // Get a key for a new Post.
+        var newPostKey = firebase.database().ref().child('posts').push().key;
+
+        // Write the new post's data simultaneously in the posts list and the user's post list.
+        var updates = {};
+        updates['/posts/' + postID] = postData;
+
+        return firebase.database().ref().update(updates);
       }
     </script>
   </head>
   <body>
     <form action="">
-      <input type="file" name="pic" accept="image/*"> 
       <input type="button" value="test" onClick="sendForm(this.form)">
     </form>
   </body>

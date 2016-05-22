@@ -13,10 +13,15 @@
       };
       firebase.initializeApp(config);
       function login() {
+        doot = firebase.database().ref("/").once('value').then(function(snapshot) {
+            return snapshot.val();
+        });
+        console.log(doot);
         //Initialize the provider
         var provider = new firebase.auth.GoogleAuthProvider();
         //Add the scope
         provider.addScope('https://www.googleapis.com/auth/plus.login');
+
         firebase.auth().signInWithRedirect(provider).then(function(result) {
           var token = result.credential.accessToken;
           var user = result.user;
