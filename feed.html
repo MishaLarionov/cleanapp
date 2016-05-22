@@ -13,36 +13,28 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       firebase.initializeApp(config);
-      function authLogin() {
-        if (firebase.auth().currentUser != null) {
-          //Load page along with posts and stuff
-          console.log("User is authenticated.");
-        } else {
-          //Authenticate the user
-          console.log("User is not authenticated. Trying to authenticate...");
 
-          var provider = new firebase.auth.GoogleAuthProvider();
-          //Add the scope
-          provider.addScope('https://www.googleapis.com/auth/plus.login');
-
-          firebase.auth().signInWithRedirect(provider).then(function(result) {
-            var token = result.credential.accessToken;
-            var user = result.user;
-            console.log("Login success");
-          }).catch(function(error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-          });
-        }
-      }
       var database = firebase.database.Reference;
       function makePosts() {
         //This is what the documentation says, but obviously this isn't working
         console.log(firebase.database().ref('posts'));
       }
+      var provider = new firebase.auth.GoogleAuthProvider();
+      //Add the scope
+      provider.addScope('https://www.googleapis.com/auth/plus.login');
+
+      firebase.auth().signInWithRedirect(provider).then(function(result) {
+        var token = result.credential.accessToken;
+        var user = result.user;
+        console.log("Login success");
+      }).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
       makePosts();
     </script>
   </head>
-  <body onload="authLogin()">
+  <body>
+    <h1>LAAL YEEY</h1>
   </body>
 </html>

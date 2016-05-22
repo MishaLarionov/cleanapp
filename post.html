@@ -13,13 +13,17 @@
       //Initialize the firebase app
       firebase.initializeApp(config);
       function sendForm(form) {
+        var $fileUpload = $("input[type='file']");
+        if (parseInt($fileUpload.get(0).files.length)>1){
+          alert("You can only upload a maximum of 1 image. Try again");
+        } else {
         var d = new Date()
         var postID = d.getTime();
         var userID = firebase.auth().currentUser.uid;
         var postData = {
           "uid": userID,
-          "img": null,
-        };
+        }
+      };
 
         // Get a key for a new Post.
         var newPostKey = firebase.database().ref().child('posts').push().key;
@@ -34,6 +38,7 @@
   </head>
   <body>
     <form action="">
+      <input type="file"
       <input type="button" value="test" onClick="sendForm(this.form)">
     </form>
   </body>
