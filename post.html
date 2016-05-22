@@ -20,9 +20,9 @@
           "uid": userID,
         }
 
-        var file = ('files' in document.getElementById("imageUpload"));
+        console.log(document.getElementById("imageUpload"));
         var storageRef = firebase.storage().ref();
-        var uploadTask = storageRef.child('postImages/' + postID).put(file);
+        //var uploadTask = storageRef.child('postImages/' + postID).put(file);
 
         // Get a key for a new Post.
         var newPostKey = firebase.database().ref().child('posts').push().key;
