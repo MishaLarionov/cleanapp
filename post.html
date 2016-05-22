@@ -13,9 +13,6 @@
       };
       //Initialize the firebase app
       firebase.initializeApp(config);
-      /*if (firebase.auth().currentUser == null) {
-          window.location.replace("index.html");
-      }*/
       function sendForm(form) {
         var d = new Date()
         var postID = d.getTime();
@@ -40,9 +37,14 @@
 
         window.location.replace("feed.html");
       }
+      function validate() {
+        if (firebase.auth().currentUser == null) {
+            window.location.replace("index.html");
+        }
+      }
     </script>
   </head>
-  <body>
+  <body onload="validate()">
     <form action="">
       <input type="file" id="imageUpload" accept="image/*">
       <input type="button" value="test" onClick="sendForm(this.form)">

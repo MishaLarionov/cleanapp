@@ -50,13 +50,15 @@
         });
       }
       */
-      if (firebase.auth().currentUser == null) {
-          window.location.replace("index.html");
+      function validate() {
+        if (firebase.auth().currentUser == null) {
+            window.location.replace("index.html");
+        }
       }
       makePosts();
     </script>
   </head>
-  <body>
+  <body onload="validate()">
     <h1>LAAL YEEY</h1>
   </body>
 </html>
