@@ -179,9 +179,9 @@ a{
   text-decoration: none;
 }
 .mdl-demo section .section__circle-container > .section__circle-container__circle {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
   margin: 8px 0;
 }
 .mdl-demo section.section--footer .section__circle--big {
@@ -247,8 +247,8 @@ a{
     background-color: #00a087;
 }
 .menu {
-  width: 90%;
-  max-width: 960px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 ;
 padding: none;
 }
@@ -271,4 +271,8 @@ padding: none;
 #add{
     position: absolute !important;
     top: 90% !important;
+}
+
+.mdl-textfield{
+    width: 100%;
 }
