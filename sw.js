@@ -2,7 +2,6 @@ var CACHE_NAME = 'cleanapp-v1';
 // The files we want to cache
 var urlsToCache = [
   'index.html',
-  'feed.html',
   'styles.css',
   'main.js'
 ];
