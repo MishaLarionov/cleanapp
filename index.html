@@ -22,7 +22,17 @@
           var token = result.credential.accessToken;
           // The signed-in user info.
           var user = result.user;
-          window.location.replace("feed.html")
+          /*doot = firebase.database().ref("/").once('value').then(function(snapshot) {
+            return ($.inArray(firebase.auth().currentUser.uid, snapshot.val()) > -1);
+          });
+          if (doot < 1) {
+            var userData = {
+              "uid": user.uid,
+              "name": user.
+            }
+          }
+          document.cookie = "userID=" + userID;*/
+          window.location.replace("feed.html", user, token);
         }).catch(function(error) {
           // Handle Errors here.
           var errorCode = error.code;
