@@ -14,7 +14,7 @@
       };
       firebase.initializeApp(config);
       function authLogin() {
-        if (firebase.auth().currentUser) {
+        if (firebase.auth().currentUser != null) {
           //Load page along with posts and stuff
           console.log("User is authenticated.");
         } else {
