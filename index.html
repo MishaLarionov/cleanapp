@@ -3,6 +3,7 @@
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {
@@ -12,24 +13,25 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       firebase.initializeApp(config);
+      var provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('https://www.googleapis.com/auth/plus.login');
+      //if (!firebase.auth().currentUser) {
       function login() {
-        doot = firebase.database().ref("/").once('value').then(function(snapshot) {
-            return snapshot.val();
-        });
-        console.log(doot);
-        //Initialize the provider
-        var provider = new firebase.auth.GoogleAuthProvider();
-        //Add the scope
-        provider.addScope('https://www.googleapis.com/auth/plus.login');
-
-        firebase.auth().signInWithRedirect(provider).then(function(result) {
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+          // This gives you a Google Access Token. You can use it to access the Google API.
           var token = result.credential.accessToken;
+          // The signed-in user info.
           var user = result.user;
-          console.log("Login success");
-          window.location.replace("feed.html");
+          window.location.replace("feed.html")
         }).catch(function(error) {
+          // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // ...
         });
       }
     </script>
@@ -54,6 +56,7 @@
   <body>
         <header>
             <h3>TopThis</h3>
+            <button onclick="login()">LOG THE FUCK IN</button>
             <a href="feed.html">Login</a>
         </header>
         <nav>

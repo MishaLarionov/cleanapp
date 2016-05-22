@@ -14,7 +14,7 @@
       //Initialize the firebase app
       firebase.initializeApp(config);
       if (firebase.auth().currentUser == null) {
-          window.location.replace("feed.html");
+          window.location.replace("index.html");
       }
       function sendForm(form) {
         var d = new Date()

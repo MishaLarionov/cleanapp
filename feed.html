@@ -14,8 +14,8 @@
       };
       firebase.initializeApp(config);
    </script>
-   <script type="text/javascript">
-      var database = firebase.database.Reference;
+    <script type="text/javascript">
+      /*var database = firebase.database.Reference;
       function makePosts() {
         //This is what the documentation says, but obviously this isn't working
         for (i in firebase.database().ref('posts')) {
@@ -38,7 +38,6 @@
           var errorMessage = error.message;
         });
       }
-
       /*
       if (!firebase.auth().currentUser) {
         firebase.auth().signInWithRedirect(provider).then(function(result) {
@@ -51,6 +50,9 @@
         });
       }
       */
+      if (firebase.auth().currentUser == null) {
+          window.location.replace("index.html");
+      }
       makePosts();
     </script>
   </head>
