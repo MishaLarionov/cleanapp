@@ -13,10 +13,24 @@
       };
       //Initialize the firebase app
       firebase.initializeApp(config);
+      function getCookie(cname) {
+          var name = cname + "=";
+          var ca = document.cookie.split(';');
+          for(var i = 0; i <ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0)==' ') {
+                  c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                  return c.substring(name.length,c.length);
+              }
+          }
+          return "";
+      }
       function sendForm(form) {
         var d = new Date()
         var postID = d.getTime();
-        var userID = firebase.auth().currentUser.uid;
+        var userID = getCookie("uid");
         var postData = {
           "uid": userID,
         }
@@ -38,7 +52,7 @@
         window.location.replace("feed.html");
       }
       function validate() {
-        if (firebase.auth().currentUser == null) {
+        if (getCookie("userID") == "") {
             window.location.replace("index.html");
         }
       }
