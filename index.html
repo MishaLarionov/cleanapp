@@ -10,12 +10,6 @@
         storageBucket: "cleanapp-a4422.appspot.com",
       };
       firebase.initializeApp(config);
-      firebase.auth().getRedirectResult().then(function(result) {
-        if (result.credential) {
-          window.location("feed.html");
-        } else {
-          console.log("Signin failed.");
-      }
       function login() {
         console.log("Login request started.");
         var provider = new firebase.auth.GoogleAuthProvider();
@@ -24,11 +18,12 @@
         provider.addScope('https://www.googleapis.com/auth/plus.login');
         // [END addscopes]
         // [START signin]
-        firebase.auth().signInWithRedirect (provider).then(function(result) {
-        if (result.credential) {
-          console.log("IT WORKS");
-        } else {
-          console.log("It doesn't work.");
+        firebase.auth().signInWithPopup (provider).then(function(success) {
+          if (success) {
+            window.location("feed.html")
+          } else {
+            console.log("Signin failed.")
+          }
         });
       }
     </script>
