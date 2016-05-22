@@ -14,9 +14,13 @@
       };
       firebase.initializeApp(config);
       function authLogin() {
-        if (firebase.auth().currentUser.uid) {
+        if (firebase.auth().currentUser) {
+          //Load page along with posts and stuff
           console.log("User is authenticated.");
         } else {
+          //Authenticate the user
+          console.log("User is not authenticated. Trying to authenticate...");
+
           var provider = new firebase.auth.GoogleAuthProvider();
           //Add the scope
           provider.addScope('https://www.googleapis.com/auth/plus.login');
