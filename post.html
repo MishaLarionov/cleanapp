@@ -13,8 +13,6 @@
       //Initialize the firebase app
       firebase.initializeApp(config);
       function sendForm(form) {
-        var $fileUpload = $("input[type='file']");
-        alert("You can only upload a maximum of 1 image. Try again");
         var d = new Date()
         var postID = d.getTime();
         var userID = firebase.auth().currentUser.uid;
