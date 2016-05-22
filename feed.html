@@ -17,7 +17,7 @@
       var database = firebase.database.Reference;
       function makePosts() {
         //This is what the documentation says, but obviously this isn't working
-        for i in firebase.database().ref('posts') {
+        for (i in firebase.database().ref('posts')) {
           console.log(i)
         }
       }
